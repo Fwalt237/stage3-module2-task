@@ -3,8 +3,8 @@ package com.mjc.school.command.implementation;
 import com.mjc.school.controller.annotation.CommandBody;
 import com.mjc.school.controller.annotation.CommandParam;
 import com.mjc.school.command.interfaces.Command;
-import com.mjc.school.service.dto.AuthorDtoRequest;
-import com.mjc.school.service.dto.NewsDtoRequest;
+import com.mjc.school.controller.dto.AuthorDtoRequest;
+import com.mjc.school.controller.dto.NewsDtoRequest;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -104,37 +104,15 @@ public class CommandImpl implements Command {
     }
 
     private Object buildCommandBody(Map<String, Object> parameters, Class<?> targetType) {
-//        try {
-//            Object instance = targetType.getDeclaredConstructor().newInstance();
-//
-//            if (targetType == com.mjc.school.service.dto.NewsDtoRequest.class) {
-//                Long id = (Long) parameters.get("newsId");
-//                String title = (String) parameters.get("title");
-//                String content = (String) parameters.get("content");
-//                Long authorId = (Long) parameters.get("authorId");
-//
-//                var constructor = targetType.getDeclaredConstructor(Long.class, String.class, String.class, Long.class);
-//                return constructor.newInstance(id, title, content, authorId);
-//            }
-//
-//            if (targetType == com.mjc.school.service.dto.AuthorDtoRequest.class) {
-//                Long id = (Long) parameters.get("authorId");
-//                String name = (String) parameters.get("name");
-//
-//                var constructor = targetType.getConstructor(Long.class, String.class);
-//                return constructor.newInstance(id, name);
-//            }
-//            return instance;
-
         try {
             if (targetType == NewsDtoRequest.class) {
-                Long id = (Long) parameters.get("newsId"); // May be null for create
+                Long id = (Long) parameters.get("newsId");
                 String title = (String) parameters.get("title");
                 String content = (String) parameters.get("content");
                 Long authorId = (Long) parameters.get("authorId");
                 return new NewsDtoRequest(id, title, content, authorId);
             } else if (targetType == AuthorDtoRequest.class) {
-                Long id = (Long) parameters.get("authorId"); // May be null for create
+                Long id = (Long) parameters.get("authorId");
                 String name = (String) parameters.get("name");
                 return new AuthorDtoRequest(id, name);
             }
