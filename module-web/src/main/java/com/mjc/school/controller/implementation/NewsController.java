@@ -1,9 +1,9 @@
-package com.mjc.school.controller;
+package com.mjc.school.controller.implementation;
 
 import com.mjc.school.controller.annotation.CommandBody;
 import com.mjc.school.controller.annotation.CommandHandler;
 import com.mjc.school.controller.annotation.CommandParam;
-//import com.mjc.school.service.BaseService;
+import com.mjc.school.controller.interfaces.BaseController;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.implementation.NewsService;
@@ -16,7 +16,6 @@ import java.util.List;
 public class NewsController implements BaseController<NewsDtoRequest, NewsDtoResponse,Long> {
 
     private final NewsService newsService;
-    //private final BaseService newsService;
 
    @Autowired
    public NewsController(NewsService newsService) {
@@ -33,7 +32,6 @@ public class NewsController implements BaseController<NewsDtoRequest, NewsDtoRes
     @CommandHandler("2")
     public NewsDtoResponse readById(@CommandParam("newsId") Long newsId) {
         return  newsService.readById(newsId);
-        //(NewsDtoResponse)
     }
 
     @Override

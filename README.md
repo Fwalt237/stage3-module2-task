@@ -16,9 +16,9 @@ The recommended timeline for the whole module is 2 weeks.
 You are provided with the basic interfaces for `repository`, `service` and `controller` layers:
 
 - `com.mjc.school.repository.model.BaseEntity`
-- `com.mjc.school.repository.BaseRepository`
-- `com.mjc.school.service.BaseService`
-- `com.mjc.school.controller.BaseController`
+- `com.mjc.school.repository.interfaces.BaseRepository`
+- `com.mjc.school.service.interfaces.BaseService`
+- `com.mjc.school.controller.interfaces.BaseController`
 
 Use them as base point for your solution. Do not change or delete them.
 

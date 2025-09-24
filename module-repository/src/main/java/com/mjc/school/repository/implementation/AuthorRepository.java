@@ -1,6 +1,6 @@
 package com.mjc.school.repository.implementation;
 
-import com.mjc.school.repository.BaseRepository;
+import com.mjc.school.repository.interfaces.BaseRepository;
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.model.data.AuthorDatasource;
 import org.springframework.beans.factory.annotation.Autowired;

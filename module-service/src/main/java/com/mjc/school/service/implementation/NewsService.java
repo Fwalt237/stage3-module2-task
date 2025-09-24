@@ -4,8 +4,8 @@ import static com.mjc.school.service.exceptions.ServiceErrorCode.NEWS_ID_DOES_NO
 
 import com.mjc.school.repository.implementation.NewsRepository;
 import com.mjc.school.repository.model.NewsModel;
-import com.mjc.school.service.BaseService;
-import com.mjc.school.service.ModelMapper;
+import com.mjc.school.service.interfaces.BaseService;
+import com.mjc.school.service.interfaces.ModelMapper;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.exceptions.NotFoundException;
