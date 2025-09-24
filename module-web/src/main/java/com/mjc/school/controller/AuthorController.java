@@ -3,7 +3,7 @@ package com.mjc.school.controller;
 import com.mjc.school.controller.annotation.CommandBody;
 import com.mjc.school.controller.annotation.CommandHandler;
 import com.mjc.school.controller.annotation.CommandParam;
-import com.mjc.school.service.BaseService;
+//import com.mjc.school.service.BaseService;
 import com.mjc.school.service.dto.AuthorDtoRequest;
 import com.mjc.school.service.dto.AuthorDtoResponse;
 import com.mjc.school.service.implementation.AuthorService;
@@ -15,7 +15,8 @@ import java.util.List;
 @Controller
 public class AuthorController implements BaseController<AuthorDtoRequest, AuthorDtoResponse,Long> {
 
-    private final BaseService authorService;
+    private final AuthorService authorService;
+    //private final BaseService authorService;
 
     @Autowired
     public AuthorController(AuthorService authorService) {
@@ -31,19 +32,20 @@ public class AuthorController implements BaseController<AuthorDtoRequest, Author
     @Override
     @CommandHandler("7")
     public AuthorDtoResponse readById(@CommandParam("authorId") Long authorId) {
-        return (AuthorDtoResponse) authorService.readById(authorId);
+        return authorService.readById(authorId);
+        //(AuthorDtoResponse)
     }
 
     @Override
     @CommandHandler("8")
     public AuthorDtoResponse create(@CommandBody AuthorDtoRequest request) {
-        return (AuthorDtoResponse) authorService.create(request);
+        return authorService.create(request);
     }
 
     @Override
     @CommandHandler("9")
     public AuthorDtoResponse update(@CommandBody AuthorDtoRequest request) {
-        return (AuthorDtoResponse) authorService.update(request);
+        return authorService.update(request);
     }
 
     @Override

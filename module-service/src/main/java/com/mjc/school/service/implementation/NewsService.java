@@ -9,7 +9,6 @@ import com.mjc.school.service.ModelMapper;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.exceptions.NotFoundException;
-import com.mjc.school.service.validator.Validator;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,14 +21,12 @@ import java.util.List;
 public class NewsService implements BaseService<NewsDtoRequest, NewsDtoResponse,Long> {
 
     private final NewsRepository newsRepository;
-    private final Validator validator;
 
     private final ModelMapper mapper = Mappers.getMapper(ModelMapper.class);
 
     @Autowired
-    public NewsService(NewsRepository newsRepository, Validator validator) {
+    public NewsService(NewsRepository newsRepository) {
         this.newsRepository = newsRepository;
-        this.validator = validator;
     }
     @Override
     public List<NewsDtoResponse> readAll() {
