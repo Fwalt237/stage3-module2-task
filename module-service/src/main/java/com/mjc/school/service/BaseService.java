@@ -1,9 +1,8 @@
-package com.mjc.school.controller.interfaces;
+package com.mjc.school.service;
 
 import java.util.List;
 
-public interface BaseController<T, R, K> {
-
+public interface BaseService<T, R, K> {
     List<R> readAll();
 
     R readById(K id);

@@ -4,8 +4,8 @@ import static com.mjc.school.service.exceptions.ServiceErrorCode.AUTHOR_ID_DOES_
 
 import com.mjc.school.repository.implementation.AuthorRepository;
 import com.mjc.school.repository.model.AuthorModel;
-import com.mjc.school.service.interfaces.BaseService;
-import com.mjc.school.service.interfaces.ModelMapper;
+import com.mjc.school.service.BaseService;
+import com.mjc.school.service.ModelMapper;
 import com.mjc.school.service.aspect.annotation.OnDelete;
 import com.mjc.school.service.dto.AuthorDtoRequest;
 import com.mjc.school.service.dto.AuthorDtoResponse;

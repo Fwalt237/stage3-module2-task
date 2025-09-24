@@ -1,4 +1,4 @@
-package com.mjc.school.service.interfaces;
+package com.mjc.school.service;
 
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.model.NewsModel;
